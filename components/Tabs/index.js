@@ -15,7 +15,7 @@ axios
       let tab = tabCreator(item)
       topicsElement.appendChild(tab);
     })
-    console.log(response);
+    // console.log(response);
   }) 
   .catch(err => {
     console.log(err);
