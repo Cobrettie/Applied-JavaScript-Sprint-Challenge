@@ -52,6 +52,8 @@ function carousel() {
   return carouselContainDiv;
 }
 
+
+
 const carouselContainer = document.querySelector('.carousel-container');
 carouselContainer.appendChild(carousel());
 
