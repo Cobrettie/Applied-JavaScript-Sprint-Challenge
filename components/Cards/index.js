@@ -36,30 +36,35 @@ axios
     let jsArticles = response.data.articles.javascript;
     jsArticles.forEach(item => {
       let card = cardCreator(item.headline, item.authorPhoto, item.authorName);
+      card.setAttribute('data-articleTopic', 'javascript');
       cardsContainer.appendChild(card);
     })
 
     let bootstrapArticles = response.data.articles.bootstrap;
     bootstrapArticles.forEach(item => {
       let card = cardCreator(item.headline, item.authorPhoto, item.authorName);
+      card.setAttribute('data-articleTopic', 'bootstrap');
       cardsContainer.appendChild(card);
     })
 
     let technologyArticles = response.data.articles.technology;
     technologyArticles.forEach(item => {
       let card = cardCreator(item.headline, item.authorPhoto, item.authorName);
+      card.setAttribute('data-articleTopic', 'technology');
       cardsContainer.appendChild(card);
     })
 
     let jQueryArticles = response.data.articles.jquery;
     jQueryArticles.forEach(item => {
       let card = cardCreator(item.headline, item.authorPhoto, item.authorName);
+      card.setAttribute('data-articleTopic', 'jquery');
       cardsContainer.appendChild(card);
     })
 
     let nodeArticles = response.data.articles.node;
     nodeArticles.forEach(item => {
       let card = cardCreator(item.headline, item.authorPhoto, item.authorName);
+      card.setAttribute('data-articleTopic', 'node.js');
       cardsContainer.appendChild(card);
     })
 

@@ -13,6 +13,7 @@ axios
   .then(response => {
     response.data.topics.forEach(item => {
       let tab = tabCreator(item)
+      tab.setAttribute('data-articleTopic', `${item}`);
       topicsElement.appendChild(tab);
     })
     // console.log(response);
