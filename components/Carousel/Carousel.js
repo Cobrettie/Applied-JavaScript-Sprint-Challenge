@@ -52,7 +52,9 @@ function carousel() {
   return carouselContainDiv;
 }
 
-
+let count = 0;
+let allImages = document.querySelectorAll('img');
+let imageNum = allImages.length;
 
 const carouselContainer = document.querySelector('.carousel-container');
 carouselContainer.appendChild(carousel());
