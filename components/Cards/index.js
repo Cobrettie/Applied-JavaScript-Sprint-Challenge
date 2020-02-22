@@ -29,6 +29,7 @@ function cardCreator(headline, authorPhoto, authorName) {
 }
 
 const cardsContainer = document.querySelector('.cards-container');
+const tabs = document.querySelectorAll('.tabs .topic .tab');
 
 axios
   .get('https://lambda-times-backend.herokuapp.com/articles')
@@ -36,35 +37,35 @@ axios
     let jsArticles = response.data.articles.javascript;
     jsArticles.forEach(item => {
       let card = cardCreator(item.headline, item.authorPhoto, item.authorName);
-      card.setAttribute('data-articleTopic', 'javascript');
+      card.setAttribute('data-articletopic', 'javascript');
       cardsContainer.appendChild(card);
     })
 
     let bootstrapArticles = response.data.articles.bootstrap;
     bootstrapArticles.forEach(item => {
       let card = cardCreator(item.headline, item.authorPhoto, item.authorName);
-      card.setAttribute('data-articleTopic', 'bootstrap');
+      card.setAttribute('data-articletopic', 'bootstrap');
       cardsContainer.appendChild(card);
     })
 
     let technologyArticles = response.data.articles.technology;
     technologyArticles.forEach(item => {
       let card = cardCreator(item.headline, item.authorPhoto, item.authorName);
-      card.setAttribute('data-articleTopic', 'technology');
+      card.setAttribute('data-articletopic', 'technology');
       cardsContainer.appendChild(card);
     })
 
     let jQueryArticles = response.data.articles.jquery;
     jQueryArticles.forEach(item => {
       let card = cardCreator(item.headline, item.authorPhoto, item.authorName);
-      card.setAttribute('data-articleTopic', 'jquery');
+      card.setAttribute('data-articletopic', 'jquery');
       cardsContainer.appendChild(card);
     })
 
     let nodeArticles = response.data.articles.node;
     nodeArticles.forEach(item => {
       let card = cardCreator(item.headline, item.authorPhoto, item.authorName);
-      card.setAttribute('data-articleTopic', 'node.js');
+      card.setAttribute('data-articletopic', 'node.js');
       cardsContainer.appendChild(card);
     })
 

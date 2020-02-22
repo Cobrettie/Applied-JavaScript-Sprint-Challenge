@@ -12,8 +12,10 @@ axios
   .get('https://lambda-times-backend.herokuapp.com/topics')
   .then(response => {
     response.data.topics.forEach(item => {
-      let tab = tabCreator(item)
-      tab.setAttribute('data-articleTopic', `${item}`);
+      let tab = tabCreator(item);
+      tab.addEventListener('click', event => {
+        tab.setAttribute('data-articletopic', `${item}`);
+      })
       topicsElement.appendChild(tab);
     })
     // console.log(response);
