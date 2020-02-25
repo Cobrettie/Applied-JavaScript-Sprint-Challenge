@@ -34,44 +34,91 @@ const tabs = document.querySelectorAll('.tabs .topic .tab');
 axios
   .get('https://lambda-times-backend.herokuapp.com/articles')
   .then(response => {
-    let jsArticles = response.data.articles.javascript;
+    const articles = response.data.articles;
+
+    const jsArticles = articles.javascript;
     jsArticles.forEach(item => {
-      let card = cardCreator(item.headline, item.authorPhoto, item.authorName);
-      card.setAttribute('data-articletopic', 'javascript');
+      const card = cardCreator(item.headline, item.authorPhoto, item.authorName);
       cardsContainer.appendChild(card);
     })
 
-    let bootstrapArticles = response.data.articles.bootstrap;
+    const bootstrapArticles = articles.bootstrap;
     bootstrapArticles.forEach(item => {
-      let card = cardCreator(item.headline, item.authorPhoto, item.authorName);
-      card.setAttribute('data-articletopic', 'bootstrap');
+      const card = cardCreator(item.headline, item.authorPhoto, item.authorName)
       cardsContainer.appendChild(card);
     })
 
-    let technologyArticles = response.data.articles.technology;
+    const technologyArticles = articles.technology;
     technologyArticles.forEach(item => {
-      let card = cardCreator(item.headline, item.authorPhoto, item.authorName);
-      card.setAttribute('data-articletopic', 'technology');
+      const card = cardCreator(item.headline, item.authorPhoto, item.authorName)
       cardsContainer.appendChild(card);
     })
 
-    let jQueryArticles = response.data.articles.jquery;
+    const jQueryArticles = articles.jquery;
     jQueryArticles.forEach(item => {
-      let card = cardCreator(item.headline, item.authorPhoto, item.authorName);
-      card.setAttribute('data-articletopic', 'jquery');
+      const card = cardCreator(item.headline, item.authorPhoto, item.authorName);
       cardsContainer.appendChild(card);
     })
 
-    let nodeArticles = response.data.articles.node;
+    const nodeArticles = articles.node;
     nodeArticles.forEach(item => {
-      let card = cardCreator(item.headline, item.authorPhoto, item.authorName);
-      card.setAttribute('data-articletopic', 'node.js');
+      const card = cardCreator(item.headline, item.authorPhoto, item.authorName);
       cardsContainer.appendChild(card);
     })
-
-    console.log(jsArticles);
+    
     console.log(response);
+    console.log(jsArticles);
+    console.log(articles);
   })
   .catch(err => {
     console.log(err);
   })
+
+  // key,value
+  // access object inside of an array
+
+
+
+
+
+
+    // let jsArticles = response.data.articles.javascript;
+    // jsArticles.forEach(item => {
+    //   let card = cardCreator(item.headline, item.authorPhoto, item.authorName);
+    //   cardsContainer.appendChild(card);
+    // })
+
+    // let bootstrapArticles = response.data.articles.bootstrap;
+    // bootstrapArticles.forEach(item => {
+    //   let card = cardCreator(item.headline, item.authorPhoto, item.authorName);
+    //   // card.setAttribute('data-articletopic', 'bootstrap');
+    //   cardsContainer.appendChild(card);
+    // })
+
+    // let technologyArticles = response.data.articles.technology;
+    // technologyArticles.forEach(item => {
+    //   let card = cardCreator(item.headline, item.authorPhoto, item.authorName);
+    //   // card.setAttribute('data-articletopic', 'technology');
+    //   cardsContainer.appendChild(card);
+    // })
+
+    // let jQueryArticles = response.data.articles.jquery;
+    // jQueryArticles.forEach(item => {
+    //   let card = cardCreator(item.headline, item.authorPhoto, item.authorName);
+    //   // card.setAttribute('data-articletopic', 'jquery');
+    //   cardsContainer.appendChild(card);
+    // })
+
+    // let nodeArticles = response.data.articles.node;
+    // nodeArticles.forEach(item => {
+    //   let card = cardCreator(item.headline, item.authorPhoto, item.authorName);
+    //   // card.setAttribute('data-articletopic', 'node.js');
+    //   cardsContainer.appendChild(card);
+    // })
+
+    // let arr = response.data.articles[i]
+    // for (let i = 0; i < arr.length; i++) {
+      // let card = cardCreator(item.headline, item.authorPhoto, item.authorName);
+      // card.setAttribute('data-articletopic', 'javascript');
+      // cardsContainer.appendChild(card);
+    // }
